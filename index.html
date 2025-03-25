@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Task Manager</h1>
+        
+        <!-- Feedback Messages -->
+        <div id="feedback" class="feedback"></div>
+        
+        <!-- Task Form -->
+        <form id="task-form">
+            <div class="form-group">
+                <label for="taskName">Task Name</label>
+                <input type="text" id="taskName" placeholder="Enter task name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="taskDescription">Description</label>
+                <textarea id="taskDescription" placeholder="Enter task description"></textarea>
+            </div>
+            
+            <div class="input-group">
+                <div class="form-group">
+                    <label for="taskDueDate">Due Date</label>
+                    <input type="date" id="taskDueDate">
+                </div>
+                
+                <div class="form-group">
+                    <label for="taskReminder">Reminder</label>
+                    <input type="datetime-local" id="taskReminder">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="taskStatus">Status</label>
+                <select id="taskStatus">
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+            
+            <button type="submit" id="submitBtn" class="btn">Add Task</button>
+            <button type="button" id="updateBtn" class="btn btn-success" style="display: none;">Update Task</button>
+            <button type="button" id="cancelBtn" class="btn btn-warning" style="display: none;">Cancel</button>
+        </form>
+        
+        <!-- Filter and Search -->
+        <div class="filter-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search tasks...">
+                <button class="btn btn-search">Search</button>
+            </div>
+            
+            <select id="filterStatus">
+                <option value="all">All Tasks</option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+            </select>
+        </div>
+        
+        <!-- Task List -->
+        <div class="task-list" id="taskList">
+            <!-- Tasks will be inserted here by JavaScript -->
+        </div>
+    </div>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
